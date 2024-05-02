@@ -1,0 +1,19 @@
+
+[Unit]
+Description=ROS 2 Node Service
+After=network.target
+
+[Service]
+Type=simple
+
+ExecStart=/home/nvidia/auto_launch/ros2_launch.sh
+Restart=always
+User=nvidia
+Environment="ROS_DOMAIN_ID=0"
+
+
+
+
+
+[Install]
+WantedBy=multi-user.target
