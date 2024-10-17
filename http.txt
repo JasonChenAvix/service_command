@@ -1,0 +1,18 @@
+[Unit]
+Description=My Python Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/nvidia/avix/video_http_server/app_v6.py
+WorkingDirectory=/home/nvidia/avix/video_http_server
+Restart=always
+User=nvidia
+Group=nvidia
+Environment="PYTHONUNBUFFERED=1"
+Environment="PATH=/usr/bin:/usr/local/bin"
+Environment="PYTHONPATH=/usr/local/lib/python3.8/dist-packages:/usr/lib/python3>
+ExecStartPre=/usr/bin/sleep 10
+
+[Install]
+WantedBy=multi-user.target
